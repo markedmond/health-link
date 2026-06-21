@@ -1,0 +1,452 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", Courier, monospace;
+}
+
+/* Base Body and Workspace overrides - Trust & Care Clinical Palette */
+body {
+  background-color: #F8F9FA !important;
+  color: #202124 !important;
+  font-family: var(--font-sans);
+}
+
+/* Main app frame */
+#app_frame {
+  background-color: #F8F9FA !important;
+  color: #202124 !important;
+}
+
+#workspace_viewport {
+  background-color: #F8F9FA !important;
+}
+
+#workspace_viewport > header {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  color: #202124 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+
+#workspace_viewport > header span,
+#workspace_viewport > header div {
+  color: #5F6368 !important;
+}
+
+#workspace_viewport > header .text-teal-400 {
+  color: #0D7A87 !important;
+}
+
+/* Sidebar Container is corporate deep teal (#0D7A87) */
+#sidebar_container {
+  background-color: #0D7A87 !important;
+  border-right: 1px solid #0A626C !important;
+  color: #FFFFFF !important;
+}
+
+#sidebar_container * {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Typography styles - Modern geometrics, high contrast and clean */
+#workspace_viewport h1,
+#workspace_viewport h2,
+#workspace_viewport h3,
+#workspace_viewport h4,
+#workspace_viewport .font-serif,
+#kpi_grid h3,
+.bg-slate-800 h3,
+.bg-slate-800 h4 {
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+  color: #0D7A87 !important;
+}
+
+#workspace_viewport h1 { font-size: 1.75rem !important; }
+#workspace_viewport h2 { font-size: 1.35rem !important; }
+
+/* Subtext in workspace */
+#workspace_viewport p,
+#workspace_viewport .text-slate-400,
+#workspace_viewport .text-slate-450 {
+  color: #5F6368 !important;
+}
+
+/* Clinical, elegant white cards in bento layout with high contrast */
+:not(#sidebar_container) .bg-slate-800,
+:not(#sidebar_container) [class*="bg-slate-800"],
+:not(#sidebar_container) .bg-slate-900,
+:not(#sidebar_container) [class*="bg-slate-900"] {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #202124 !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 4px 16px rgba(13, 122, 135, 0.03), 0 1px 2px rgba(0, 0, 0, 0.01) !important;
+}
+
+/* Remove default dark separator colors inside white content cards */
+:not(#sidebar_container) .bg-slate-800 *,
+:not(#sidebar_container) .bg-slate-900 * {
+  border-color: #F1F3F4 !important;
+}
+
+/* Text adjustments inside the new white cards */
+:not(#sidebar_container) .bg-slate-800 p,
+:not(#sidebar_container) .bg-slate-800 span:not([class*="bg-"]):not([class*="text-"]):not([class*="font-"]),
+:not(#sidebar_container) .bg-slate-900 p,
+:not(#sidebar_container) .bg-slate-900 span:not([class*="bg-"]):not([class*="text-"]):not([class*="font-"]),
+:not(#sidebar_container) .bg-slate-800 label,
+:not(#sidebar_container) .bg-slate-900 label,
+:not(#sidebar_container) .text-slate-100,
+:not(#sidebar_container) .text-slate-200,
+:not(#sidebar_container) .text-slate-350,
+:not(#sidebar_container) .text-slate-150 {
+  color: #202124 !important;
+}
+
+/* Interactive elements, links and indicators */
+.text-teal-400, .text-teal-300 {
+  color: #0D7A87 !important;
+}
+
+/* Table styling rules - Clean header and nice alternating rows */
+th {
+  background-color: #F8F9FA !important;
+  color: #5F6368 !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #E2E8F0 !important;
+}
+
+td {
+  color: #202124 !important;
+  border-bottom: 1px solid #F1F3F4 !important;
+}
+
+tr:hover td {
+  background-color: rgba(13, 122, 135, 0.02) !important;
+}
+
+/* Sub-panel/nest elements inside sections */
+:not(#sidebar_container) .bg-slate-950,
+:not(#sidebar_container) [class*="bg-slate-950"],
+:not(#sidebar_container) .bg-slate-900.rounded-lg,
+:not(#sidebar_container) .bg-slate-900.rounded-xl,
+:not(#sidebar_container) .bg-slate-800 .bg-slate-900,
+:not(#sidebar_container) [class*="bg-slate-800"] [class*="bg-slate-900"],
+:not(#sidebar_container) [class*="bg-slate-800"] .bg-slate-900,
+:not(#sidebar_container) .bg-slate-800 [class*="bg-slate-900"] {
+  background-color: #F8F9FA !important;
+  color: #202124 !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 0.75rem !important;
+  box-shadow: none !important;
+}
+
+/* Ensure text inside sub-panels/nested blocks stays charcoal */
+:not(#sidebar_container) .bg-slate-950 *,
+:not(#sidebar_container) .bg-slate-900 * {
+  color: #202124 !important;
+}
+
+/* Color Palette System Maps - Trust & Care Color Standards */
+
+/* SUCCESS GREEN: Fully Vaccinated badges or positive metrics */
+.text-[#2D5A27], .text-[#2d5a27] {
+  color: #34A853 !important;
+}
+.bg-[#2D5A27], .bg-[#2d5a27], .bg-green-600 {
+  background-color: #34A853 !important;
+  color: #FFFFFF !important;
+}
+.bg-[#2D5A27]\/10, .bg-[#2d5a27]\/10, .bg-green-500\/10, .bg-green-600\/10 {
+  background-color: rgba(52, 168, 83, 0.1) !important;
+  color: #34A853 !important;
+  border-color: rgba(52, 168, 83, 0.15) !important;
+}
+
+/* AMBER ACCENTS: Partially Vaccinated, Pending, Warning */
+.text-[#B2AC88], .text-[#b2ac88], .text-yellow-500 {
+  color: #F1A300 !important;
+}
+.bg-[#B2AC88], .bg-[#b2ac88], .bg-yellow-500 {
+  background-color: #F1A300 !important;
+  color: #FFFFFF !important;
+}
+.bg-[#B2AC88]\/10, .bg-[#b2ac88]\/10, .bg-yellow-500\/10, .bg-yellow-600\/10 {
+  background-color: rgba(241, 163, 0, 0.1) !important;
+  color: #F1A300 !important;
+  border-color: rgba(241, 163, 0, 0.15) !important;
+}
+
+/* ACTION RED: Unvaccinated, Alerts, Alarms, Emergency */
+.text-[#D97B66], .text-[#d97b66], .text-rose-500, .text-rose-400 {
+  color: #EF4444 !important;
+}
+.bg-[#D97B66], .bg-[#d97b66], .bg-rose-500, .bg-rose-600 {
+  background-color: #EF4444 !important;
+  color: #FFFFFF !important;
+}
+.bg-[#D97B66]\/10, .bg-[#d97b66]\/10, .bg-rose-500\/10, .bg-rose-500\/15 {
+  background-color: rgba(239, 68, 68, 0.08) !important;
+  color: #EF4444 !important;
+  border-color: rgba(239, 68, 68, 0.15) !important;
+}
+
+/* AMBER, GREEN, RED fallback variables mapping */
+.text-green-400, .text-green-500, .text-green-600 { color: #34A853 !important; }
+.text-yellow-400, .text-yellow-500, .text-yellow-600 { color: #F1A300 !important; }
+.text-red-400, .text-red-500, .text-red-600, .text-rose-400, .text-rose-500, .text-rose-600 { color: #EF4444 !important; }
+
+.bg-green-400, .bg-green-500 { background-color: #34A853 !important; color: #FFFFFF !important; }
+.bg-yellow-400, .bg-yellow-500 { background-color: #F1A300 !important; color: #FFFFFF !important; }
+.bg-red-400, .bg-red-500, .bg-rose-450, .bg-rose-500 { background-color: #EF4444 !important; color: #FFFFFF !important; }
+
+/* Form inputs - Clean healthcare white */
+input, select, textarea {
+  background-color: #FFFFFF;
+  border: 1px solid #D2D6DC;
+  color: #202124;
+  border-radius: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-family: var(--font-sans);
+  transition: all 0.15s ease-in-out;
+}
+
+/* Custom robust Search Input padding classes to prevent icon overlapping */
+.relative input[id*="search"], 
+.relative input[placeholder*="Search"],
+.relative input[placeholder*="Filter"] {
+  padding-left: 2.75rem !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #0D7A87;
+  box-shadow: 0 0 0 3px rgba(13, 122, 133, 0.15);
+  outline: none;
+}
+
+select option {
+  background-color: #FFFFFF;
+  color: #202124;
+}
+
+/* Primary Teal Actions - Deep Teal (#0D7A87) styling */
+button.bg-teal-555,
+[class*="bg-teal-555"],
+button.bg-teal-500,
+[class*="bg-teal-500"] {
+  background-color: #0D7A87 !important;
+  color: #FFFFFF !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 600 !important;
+  border: 1px solid #0D7A87 !important;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+button.bg-teal-555:hover,
+[class*="bg-teal-555"]:hover,
+button.bg-teal-500:hover,
+[class*="bg-teal-500"]:hover {
+  background-color: #0A626C !important;
+  border-color: #0A626C !important;
+}
+
+/* Secondary Action Buttons */
+button[class*="bg-slate-700"],
+button[class*="bg-slate-800"] {
+  background-color: #FFFFFF !important;
+  border: 1px solid #D2D6DC !important;
+  color: #202124 !important;
+  border-radius: 0.5rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+button[class*="bg-slate-700"]:hover,
+button[class*="bg-slate-800"]:hover {
+  background-color: #F8F9FA !important;
+  border-color: #C3C7CF !important;
+}
+
+/* Modal and dialog background styling */
+.fixed.inset-0.bg-slate-950\/80 {
+  background-color: rgba(32, 33, 36, 0.6) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* Welcome Dashboard Banner - Beautiful soft patient greeting card */
+#dashboard_welcome {
+  background-color: #F0F6F4 !important; /* Very soft lighter clinical green */
+  border: 1px solid #D5E6E1 !important; /* Softer light border matching the new lighter bg */
+  border-radius: 1.25rem !important;
+  color: #0D7A87 !important;
+  box-shadow: 0 4px 12px rgba(13, 122, 135, 0.02) !important;
+}
+
+#dashboard_welcome h1 {
+  color: #0D7A87 !important;
+}
+
+#dashboard_welcome button span,
+#dashboard_welcome button svg {
+  color: inherit !important;
+}
+
+#dashboard_welcome p {
+  color: #202124 !important;
+}
+
+/* Prevent rules from breaking specific printable FHSIS document layers */
+#doh_fsis_print_layout {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid #CCCCCC !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+}
+
+#doh_fsis_print_layout * {
+  color: #000000 !important;
+  border-color: #E2E8F0 !important;
+  background-color: transparent !important;
+}
+
+#doh_fsis_print_layout .bg-slate-50 {
+  background-color: #F8FAFC !important;
+}
+
+/* Special styling for clinical tone badges and logs */
+.bg-teal-500\/10 {
+  background-color: rgba(13, 122, 135, 0.08) !important;
+  color: #0D7A87 !important;
+}
+
+.bg-[#2D5A27]\/10 {
+  background-color: rgba(52, 168, 83, 0.1) !important;
+  color: #34A853 !important;
+}
+
+.bg-yellow-400\/10 {
+  background-color: rgba(241, 163, 0, 0.08) !important;
+  color: #F1A300 !important;
+  border-color: rgba(241, 163, 0, 0.15) !important;
+}
+
+.bg-[#B2AC88]\/10 {
+  background-color: rgba(241, 163, 0, 0.08) !important;
+  color: #F1A300 !important;
+}
+
+/* Login elements styling */
+#login_container {
+  background-color: #F8F9FA !important;
+}
+
+#login_container > div:first-child {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  color: #5F6368 !important;
+}
+
+#login_card {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 12px 30px rgba(13, 122, 135, 0.08) !important;
+}
+
+#login_card h1:not(.text-white) {
+  color: #0D7A87 !important;
+}
+
+#login_card label {
+  color: #5F6368 !important;
+}
+
+#login_card input {
+  background-color: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #1E293B !important;
+}
+
+#login_card #username_input {
+  padding-left: 2.75rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+#login_card #password_input {
+  padding-left: 2.75rem !important;
+  padding-right: 2.75rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+#login_card button.border {
+  background-color: #FFFFFF !important;
+  border: 1px solid #D2D6DC !important;
+  color: #202124 !important;
+}
+
+#login_card button.bg-teal-555 {
+  background-color: #0D7A87 !important;
+  color: #FFFFFF !important;
+}
+
+/* Custom scrollbars matching clinical tones */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D2D6DC;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0D7A87;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #doh_fsis_print_layout, #doh_fsis_print_layout * {
+    visibility: visible;
+  }
+  #doh_fsis_print_layout {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  #printed_medical_id_card, #printed_medical_id_card * {
+    visibility: visible;
+  }
+  #printed_medical_id_card {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    border: 1px solid #000 !important;
+  }
+}
