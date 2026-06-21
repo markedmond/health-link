@@ -1,0 +1,6 @@
+{
+  "name": "HealthLink",
+  "description": "Barangay Junob Health Record and Vaccination Management System containing patient profiling, service scheduling, child growth monitoring, pregnancy tracking, newborn screening compliance, SMS alerts, and DOH reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
